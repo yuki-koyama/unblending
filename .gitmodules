@@ -1,0 +1,21 @@
+[submodule "external/cxxopts"]
+	path = external/cxxopts
+	url = https://github.com/jarro2783/cxxopts.git
+[submodule "external/json11"]
+	path = external/json11
+	url = https://github.com/dropbox/json11.git
+[submodule "external/nlopt"]
+	path = external/nlopt
+	url = https://github.com/stevengj/nlopt.git
+[submodule "external/nlopt-util"]
+	path = external/nlopt-util
+	url = https://github.com/yuki-koyama/nlopt-util.git
+[submodule "external/parallel-util"]
+	path = external/parallel-util
+	url = https://github.com/yuki-koyama/parallel-util.git
+[submodule "external/timer"]
+	path = external/timer
+	url = https://github.com/yuki-koyama/timer.git
+[submodule "external/tinycolormap"]
+	path = external/tinycolormap
+	url = https://github.com/yuki-koyama/tinycolormap.git
