@@ -66,6 +66,10 @@ Usage:
       --layer-infos-path arg  Path to the layer infos (json)
 ```
 
+The GUI allows you to interactively specify necessary parameters. Currently the GUI is tested on macOS only (pull requests are highly appreciated).
+
+![GUI. Input image courtesy of David Revoy.](./docs/images/gui.png)
+
 ## Build and Run Using Docker
 
 If you use `docker`, you can easily build the CLI by `docker build`:
