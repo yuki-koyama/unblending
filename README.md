@@ -45,7 +45,7 @@ This process builds a static library (e.g., `libunblending.a`) and a command lin
 
 The CLI can be used by the following command:
 ```
-$ ./unblending-cli/unblending-cli [-o <path-to-output-dir>] [-w <target-image-width>] <path-to-input-image> <path-to-layer-info>
+$ ./unblending-cli/unblending-cli [-o <output-dir-path>] [-w <target-image-width>] <input-image-path> <layer-infos-path>
 ```
 Note that `--help` will generate the following messages:
 ```
@@ -81,7 +81,7 @@ $ docker build -t unblending-cli:latest .
 
 Then, you can use the CLI by `docker run`: 
 ```
-$ docker run --rm --volume $(pwd):/tmp -it unblending-cli:latest [-o <path-to-output-dir>] [-w <target-image-width>] <path-to-input-image> <path-to-layer-info>
+$ docker run --rm --volume $(pwd):/tmp -it unblending-cli:latest [-o <output-dir-path>] [-w <target-image-width>] <input-image-path> <layer-infos-path>
 ```
 
 For example, the following command generates results into a sub directory named `output`:
