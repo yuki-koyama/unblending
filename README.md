@@ -2,6 +2,8 @@
 
 Unblending is a C++ library for decomposing a target image into a set of semi-transparent layers associated with *advanced color-blend modes* (e.g., "multiply" and "color-dodge"). Output layers can be imported to Adobe Photoshop, Adobe After Effects, GIMP, Krita, etc. and are useful for performing complex edits that are otherwise difficult.
 
+![An example of image decomposition. Input image courtesy of David Revoy.](./docs/images/teaser.gif)
+
 - `unblending` is a library that provides the main functionality for the use from other programs.
 - `unblending-cli` is an executable with a command line interface to use the main functionality.
 - `unblending-gui` is an executable with a graphical user interface to use the main functionality with interactive specification of necessary input parameters.
@@ -45,7 +47,6 @@ The CLI can be used by the following command:
 ```
 $ ./unblending-cli/unblending-cli [-o <path-to-output-dir>] [-w <target-image-width>] <path-to-input-image> <path-to-layer-info>
 ```
-
 Note that `--help` will generate the following messages:
 ```
 $ ./unblending-cli/unblending-cli --help
