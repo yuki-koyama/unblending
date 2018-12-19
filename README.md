@@ -47,24 +47,6 @@ The CLI can be used by the following command:
 ```
 $ ./unblending-cli/unblending-cli [-o <output-dir-path>] [-w <target-image-width>] <input-image-path> <layer-infos-path>
 ```
-Note that `--help` will generate the following messages:
-```
-$ ./unblending-cli/unblending-cli --help
- - A command line interface (CLI) for using the ``unblending'' library.
-Usage:
-  unblending-cli [OPTION...] <input-image-path> <layer-infos-path>
-
-  -o, --outdir arg            Path to the output directory (default: ./out)
-  -w, --width arg             Target width (pixels) of the output image
-                              (default: original resolution)
-  -h, --help                  Print help
-  -e, --explicit-mode-names   Append blend mode names to output image file
-                              names
-  -v, --verbose-export        Export intermediate files as well as final
-                              outcomes
-      --input-image-path arg  Path to the input image (png or jpg)
-      --layer-infos-path arg  Path to the layer infos (json)
-```
 
 The GUI allows you to interactively specify necessary parameters. Currently the GUI is tested on macOS only (pull requests are highly appreciated).
 
