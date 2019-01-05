@@ -15,6 +15,7 @@
 //#define MATTE_ALPHA_FORCE_FIXED
 //#define AKSOY_INITIAL_SOLUTION
 //#define SECOND_LAYER_GRAY
+//#define USE_ORIGINAL_HYPERPARAMETERS
 
 namespace unblending
 {
@@ -184,17 +185,26 @@ namespace unblending
         const int num_alpha_constraints = is_for_refinement ? num_layers : 1;
         const int num_constraints       = 3 + num_alpha_constraints + 3 * gray_layers.size();
         
+#ifdef USE_ORIGINAL_HYPERPARAMETERS
         constexpr double gamma         = 0.25;
         constexpr double epsilon       = 1e-05;
         constexpr double local_epsilon = 1e-05;
         constexpr double beta          = 10.0;
+        constexpr double initial_lo    = 0.1;
+#else
+        constexpr double gamma         = 0.25;
+        constexpr double epsilon       = 5e-03;
+        constexpr double local_epsilon = 5e-03;
+        constexpr double beta          = 10.0;
+        constexpr double initial_lo    = 100.0;
+#endif
         
         OptimizationParameterSet set;
         set.models            = models;
         set.comp_ops          = comp_ops;
         set.modes             = modes;
         set.lambda            = VecX::Constant(num_constraints, 0.0);
-        set.lo                = 0.1;
+        set.lo                = initial_lo;
         set.target_color      = target_color;
         set.sigma             = 10.0;
         set.target_alphas     = target_alphas;
