@@ -14,6 +14,10 @@ Yuki Koyama and Masataka Goto. 2018. Decomposing Images into Layers with Advance
 
 This library is provided mainly for researchers who want to use or extend the method described in the above paper. We also expect that this library is useful for developers who plan to use the method in their software.
 
+## Demo
+
+Unblending Web App: <https://unblending.ongaaccel.jp>
+
 ## Dependencies
 
 - NLopt <https://nlopt.readthedocs.io/> (included as gitsubmodule)
