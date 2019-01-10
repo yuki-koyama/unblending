@@ -20,11 +20,13 @@ Unblending Web App: <https://unblending.ongaaccel.jp>
 
 ## Dependencies
 
-- NLopt <https://nlopt.readthedocs.io/> (included as gitsubmodule)
+- cxxopts <https://github.com/jarro2783/cxxopts> (included as gitsubmodule)
 - json11 <https://github.com/dropbox/json11> (included as gitsubmodule)
+- NLopt <https://nlopt.readthedocs.io/> (included as gitsubmodule)
 - nlopt-util <https://github.com/yuki-koyama/nlopt-util> (included as gitsubmodule)
 - parallel-util <https://github.com/yuki-koyama/parallel-util> (included as gitsubmodule)
 - timer <https://github.com/yuki-koyama/timer> (included as gitsubmodule)
+- tinycolormap <https://github.com/yuki-koyama/tinycolormap> (included as gitsubmodule)
 - Eigen <http://eigen.tuxfamily.org/>
 - Qt5 <https://www.qt.io/>
 
