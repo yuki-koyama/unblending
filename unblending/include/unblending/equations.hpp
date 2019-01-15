@@ -21,9 +21,15 @@ namespace unblending
                           const std::vector<BlendMode>& modes,
                           const bool                    crop = false);
     
+    /// \f[
+    ///     - \boldsymbol{\lambda} \mathbf{C}(\mathbf{x})
+    /// \f]
     double calculate_lagrange_term(const VecX& constraint_vector,
                                    const VecX& lambda);
     
+    /// \f[
+    ///     \frac{1}{2} \lo \| \mathbf{C}(\mathbf{x}) \|^2
+    /// \f]
     double calculate_penalty_term(const VecX&  constraint_vector,
                                   const double lo);
     
