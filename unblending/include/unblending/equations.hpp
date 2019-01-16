@@ -21,18 +21,27 @@ namespace unblending
                           const std::vector<BlendMode>& modes,
                           const bool                    crop = false);
     
+    /// \brief Calculate the lagrangian term of the objective function.
+    /// \details
     /// \f[
-    ///     - \boldsymbol{\lambda} \mathbf{C}(\mathbf{x})
+    ///     - \boldsymbol{\lambda}^{\mathrm{T}} \mathbf{C}(\mathbf{x})
     /// \f]
     double calculate_lagrange_term(const VecX& constraint_vector,
                                    const VecX& lambda);
     
+    /// \brief Calculate the penalty term of the objective function.
+    /// \details
     /// \f[
     ///     \frac{1}{2} \rho \| \mathbf{C}(\mathbf{x}) \|^2
     /// \f]
     double calculate_penalty_term(const VecX&  constraint_vector,
                                   const double rho);
     
+    /// \brief Calculate the energy function.
+    /// \details
+    /// \f[
+    ///     E(\mathbf{x})
+    /// \f]
     double calculate_unmixing_energy_term(const VecX&                       alphas,
                                           const VecX&                       colors,
                                           const std::vector<ColorModelPtr>& models,
@@ -40,6 +49,11 @@ namespace unblending
                                           const bool                        use_sparcity,
                                           const bool                        use_minimum_alpha);
     
+    /// \brief Calculate the constraint vector.
+    /// \details
+    /// \f[
+    ///     \mathbf{C}(\mathbf{x})
+    /// \f]
     VecX calculate_constraint_vector(const VecX&                   alphas,
                                      const VecX&                   colors,
                                      const Vec3&                   target_color,
