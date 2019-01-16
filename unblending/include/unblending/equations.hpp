@@ -28,10 +28,10 @@ namespace unblending
                                    const VecX& lambda);
     
     /// \f[
-    ///     \frac{1}{2} \lo \| \mathbf{C}(\mathbf{x}) \|^2
+    ///     \frac{1}{2} \rho \| \mathbf{C}(\mathbf{x}) \|^2
     /// \f]
     double calculate_penalty_term(const VecX&  constraint_vector,
-                                  const double lo);
+                                  const double rho);
     
     double calculate_unmixing_energy_term(const VecX&                       alphas,
                                           const VecX&                       colors,

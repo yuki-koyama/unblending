@@ -80,9 +80,9 @@ namespace unblending
     }
     
     double calculate_penalty_term(const VecX&  constraint_vector,
-                                  const double lo)
+                                  const double rho)
     {
-        return 0.5 * lo * constraint_vector.squaredNorm();
+        return 0.5 * rho * constraint_vector.squaredNorm();
     }
     
     double calculate_unmixing_energy_term(const VecX&                  alphas,

@@ -29,7 +29,7 @@ namespace unblending
         
         Vec3   target_color;
         VecX   lambda;
-        double lo;
+        double rho;
         double sigma;               // Weight for the sparcity term
         bool   use_sparcity;
         bool   use_minimum_alpha;
@@ -72,7 +72,7 @@ namespace unblending
                                                                                                set.target_alphas,
                                                                                                set.gray_layers);
         
-        const VecX gradient = derivative_of_unmixing_energy + derivative_of_constraint_vector * (set.lo * constraint_vector - set.lambda);
+        const VecX gradient = derivative_of_unmixing_energy + derivative_of_constraint_vector * (set.rho * constraint_vector - set.lambda);
         
         Eigen::Map<VecX>(&grad[0], num_layers * 4) = gradient;
         
@@ -83,7 +83,7 @@ namespace unblending
                                                                       set.use_sparcity,
                                                                       set.use_minimum_alpha);
         const double lagrange        = calculate_lagrange_term(constraint_vector, set.lambda);
-        const double penalty         = calculate_penalty_term(constraint_vector, set.lo);
+        const double penalty         = calculate_penalty_term(constraint_vector, set.rho);
         
         return unmixing_energy + lagrange + penalty;
     }
@@ -190,13 +190,13 @@ namespace unblending
         constexpr double epsilon       = 1e-05;
         constexpr double local_epsilon = 1e-05;
         constexpr double beta          = 10.0;
-        constexpr double initial_lo    = 0.1;
+        constexpr double initial_rho   = 0.1;
 #else
         constexpr double gamma         = 0.25;
         constexpr double epsilon       = 5e-03;
         constexpr double local_epsilon = 5e-03;
         constexpr double beta          = 10.0;
-        constexpr double initial_lo    = 100.0;
+        constexpr double initial_rho   = 100.0;
 #endif
         
         OptimizationParameterSet set;
@@ -204,7 +204,7 @@ namespace unblending
         set.comp_ops          = comp_ops;
         set.modes             = modes;
         set.lambda            = VecX::Constant(num_constraints, 0.0);
-        set.lo                = initial_lo;
+        set.rho               = initial_rho;
         set.target_color      = target_color;
         set.sigma             = 10.0;
         set.target_alphas     = target_alphas;
@@ -237,8 +237,8 @@ namespace unblending
                                                            target_alphas,
                                                            gray_layers);
             
-            set.lambda -= set.lo * g_new;
-            if (g_new.norm() > gamma * g.norm()) set.lo *= beta;
+            set.lambda -= set.rho * g_new;
+            if (g_new.norm() > gamma * g.norm()) { set.rho *= beta; }
             
             const bool is_unchanged = (x_new - x).norm() < epsilon;
             const bool is_satisfied = g_new.norm() < epsilon;
