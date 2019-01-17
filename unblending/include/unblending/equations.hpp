@@ -63,6 +63,11 @@ namespace unblending
                                      const VecX&                   target_alphas = VecX(),
                                      const std::vector<int>&       gray_layers = std::vector<int>());
     
+    /// \brief Calculate the derivative of the energy function.
+    /// \details
+    /// \f[
+    ///     \frac{\partial}{\partial \mathbf{x}} E(\mathbf{x})
+    /// \f]
     VecX calculate_derivative_of_unmixing_energy(const VecX&                       alphas,
                                                  const VecX&                       colors,
                                                  const std::vector<ColorModelPtr>& models,
@@ -70,6 +75,11 @@ namespace unblending
                                                  const bool                        use_sparcity,
                                                  const bool                        use_minimum_alpha);
     
+    /// \brief Calculate the derivative of the constraint vector.
+    /// \details
+    /// \f[
+    ///     \frac{\partial}{\partial \mathbf{x}} \mathbf{C}(\mathbf{x})
+    /// \f]
     MatX calculate_derivative_of_constraint_vector(const VecX&                   alphas,
                                                    const VecX&                   colors,
                                                    const Vec3&                   target_color,
