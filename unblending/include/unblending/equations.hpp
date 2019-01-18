@@ -7,6 +7,11 @@
 
 namespace unblending
 {
+    /// \brief Calculate the composite operation.
+    /// \details Equation 6:
+    /// \f[
+    ///     \mathtt{comp}(\mathbf{x}_s, \mathbf{x}_d)
+    /// \f]
     Vec4 composite_two_layers(const Vec3&     c_s,
                               const Vec3&     c_d,
                               const double    a_s,
@@ -15,6 +20,11 @@ namespace unblending
                               const BlendMode mode,
                               const bool      crop = false);
     
+    /// \brief Calculate the recursive composition.
+    /// \details Equation 7:
+    /// \f[
+    ///     \hat{\mathbf{x}}
+    /// \f]
     Vec4 composite_layers(const VecX&                   alphas,
                           const VecX&                   colors,
                           const std::vector<CompOp>&    comp_ops,
@@ -76,7 +86,7 @@ namespace unblending
                                                  const bool                        use_minimum_alpha);
     
     /// \brief Calculate the derivative of the constraint vector.
-    /// \details
+    /// \details Equation 15:
     /// \f[
     ///     \frac{\partial}{\partial \mathbf{x}} \mathbf{C}(\mathbf{x})
     /// \f]
