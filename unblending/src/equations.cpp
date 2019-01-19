@@ -281,6 +281,10 @@ namespace unblending
         return derivative;
     }
     
+    /// \details Equation 16:
+    /// \f[
+    ///     \frac{\partial}{\partial \mathbf{x}_i} \hat{\mathbf{x}}_k
+    /// \f]
     Mat4 calculate_derivative_of_k_th_composited_rgba_by_i_th_layer_rgba(const VecX&                   alphas,
                                                                          const VecX&                   colors,
                                                                          const Vec3&                   target_color,
