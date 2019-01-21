@@ -80,7 +80,6 @@
    <addaction name="menuFile"/>
    <addaction name="menuActions"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="actionDecompose">
    <property name="text">
     <string>Decompose</string>
