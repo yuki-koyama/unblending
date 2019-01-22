@@ -2,6 +2,7 @@
 #include <cassert>
 #include <unblending/unblending.hpp>
 
+// By Defining REFINE macro, it will calculate the refinement step even for preview
 #define REFINE
 
 using unblending::GaussianColorModel;

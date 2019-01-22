@@ -26,6 +26,7 @@ namespace unblending
         virtual IntColor get_color(int x, int y) const = 0;
     };
     
+    /// \brief Image class for handling a single-channel image.
     class Image final : public AbstractImage
     {
     public:
@@ -92,6 +93,7 @@ namespace unblending
         std::vector<double> pixels_;
     };
     
+    /// \brief Image class for handling a 4-channel (RGBA) image.
     class ColorImage final : public AbstractImage
     {
     public:
@@ -140,6 +142,9 @@ namespace unblending
             return rgba;
         }
         
+        /// \brief Get the image data as a byte array.
+        /// \details Each channel in a pixel is repsented using 8-bit unsigned integer (0 to 255).
+        /// \return A vector array whose size is width * height * 4.
         std::vector<uint8_t> get_rgba_bits() const;
         
         void make_fully_opaque();
