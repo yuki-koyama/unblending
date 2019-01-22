@@ -27,9 +27,6 @@ namespace
 
 Core::Core()
 {
-    // Set random seed
-    std::srand(static_cast<unsigned>(time(0)));
-    
     // Set target image (hard coding)
     const std::string image_file_path = "/Users/koyama/Desktop/input.png";
     import_image(image_file_path);
