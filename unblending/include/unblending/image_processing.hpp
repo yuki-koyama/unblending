@@ -189,13 +189,19 @@ namespace unblending
     };
     
     Image apply_convolution(const Image& image, const Eigen::MatrixXd& kernel);
+    
+    /// \brief Calculate a kernel of the guided image filter.
+    /// \details This function is used inside apply_guided_filter.
     Image calculate_guided_filter_kernel(const Image& image,
                                          int center_x,
                                          int center_y,
                                          int radius,
                                          double epsilon = 0.01,
                                          bool force_positive = true);
+    
     Image calculate_gradient_magnitude(const Image& image);
+    
+    /// \brief Calculate the result of applying the guided image filter to an image.
     Image apply_guided_filter(const Image& input_image,
                               const ColorImage& guidance_image,
                               int radius,
