@@ -188,6 +188,9 @@ namespace unblending
         int target_concurrency_ = 0;
     };
     
+    /// \brief Apply the convolutional operation to the image.
+    /// \details This function is multi-threaded and its concurrency is managed by the
+    ///          ImageProcessingConcurrencyManager instance.
     Image apply_convolution(const Image& image, const Eigen::MatrixXd& kernel);
     
     /// \brief Calculate a kernel of the guided image filter.
