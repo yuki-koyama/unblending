@@ -10,6 +10,7 @@
 #include "layerimagewidget.h"
 #include "layercolormodelwidget.h"
 
+// When FULL_CONTROL macro is defined, the system provides finer control of color distributions
 // #define FULL_CONTROL
 
 namespace

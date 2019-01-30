@@ -10,6 +10,7 @@ namespace unblending
     class ColorImage;
 }
 
+/// \brief Widget class for displaying a static image
 class ImageWidget : public QWidget
 {
     Q_OBJECT

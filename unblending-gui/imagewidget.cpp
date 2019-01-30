@@ -5,8 +5,10 @@
 
 ImageWidget::ImageWidget(QWidget *parent) : QWidget(parent)
 {
-    this->setMinimumWidth (150);
-    this->setMinimumHeight(150);
+    constexpr int size = 150;
+    
+    this->setMinimumWidth (size);
+    this->setMinimumHeight(size);
 }
 
 void ImageWidget::copy_and_set_image(const unblending::ColorImage &image)
