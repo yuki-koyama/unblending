@@ -27,6 +27,11 @@ ui(new Ui::MainWindow)
     
     build_layer_widgets();
     
+    const std::string image_file_path = QFileDialog::getOpenFileName(this).toStdString();
+    if (image_file_path.empty()) { exit(0); }
+    
+    core.import_image(image_file_path);
+    
     main_image_widget_ = new ImageWidget(this);
     main_image_widget_->copy_and_set_image(*core.get_image());
     

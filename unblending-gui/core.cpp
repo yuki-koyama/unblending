@@ -28,10 +28,6 @@ namespace
 
 Core::Core()
 {
-    // Set target image (hard coding)
-    const std::string image_file_path = "/Users/koyama/Desktop/input.png";
-    import_image(image_file_path);
-    
     // Set default color models
     models_ = std::vector<ColorModelPtr>();
     models_.push_back(instantiate_default_color_model());
