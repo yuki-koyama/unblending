@@ -11,4 +11,4 @@ addons:
     - eigen
     - qt
 script:
-- cmake . && make
+- cmake -DUNBLENDING_BUILD_CLI_APP=ON -DUNBLENDING_BUILD_GUI_APP=ON . && make
