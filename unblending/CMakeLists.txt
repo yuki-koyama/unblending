@@ -1,4 +1,4 @@
-find_package(Eigen3 REQUIRED)
+find_package(Eigen3 3.3 REQUIRED)
 find_package(Qt5Gui REQUIRED)
 find_package(Threads REQUIRED)
 
