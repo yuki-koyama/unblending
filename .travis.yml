@@ -15,6 +15,7 @@ addons:
   apt:
     packages:
     - cmake
+    - libeigen3-dev
     - qt5-default
 script:
 - cmake -DUNBLENDING_BUILD_CLI_APP=ON -DUNBLENDING_BUILD_GUI_APP=ON . && make
