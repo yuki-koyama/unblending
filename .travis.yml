@@ -3,12 +3,18 @@ compiler:
 - clang
 - gcc
 os:
+- linux
 - osx
+dist: xenial
 addons:
   homebrew:
     packages:
     - cmake
     - eigen
     - qt
+  apt:
+    packages:
+    - cmake
+    - qt5-default
 script:
 - cmake -DUNBLENDING_BUILD_CLI_APP=ON -DUNBLENDING_BUILD_GUI_APP=ON . && make
