@@ -29,7 +29,7 @@ Unblending Web App: <https://unblending.ongaaccel.jp>
 - parallel-util <https://github.com/yuki-koyama/parallel-util> (included as gitsubmodule)
 - timer <https://github.com/yuki-koyama/timer> (included as gitsubmodule)
 - tinycolormap <https://github.com/yuki-koyama/tinycolormap> (included as gitsubmodule)
-- Eigen <http://eigen.tuxfamily.org/>
+- Eigen (3.3 or later) <http://eigen.tuxfamily.org/>
 - Qt5 <https://www.qt.io/>
 
 ## Prerequisites
