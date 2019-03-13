@@ -1,5 +1,7 @@
 # Unblending
 
+[![Build Status](https://travis-ci.com/yuki-koyama/unblending.svg?branch=master)](https://travis-ci.com/yuki-koyama/unblending)
+
 Unblending is a C++ library for decomposing a target image into a set of semi-transparent layers associated with *advanced color-blend modes* (e.g., "multiply" and "color-dodge"). Output layers can be imported to Adobe Photoshop, Adobe After Effects, GIMP, Krita, etc. and are useful for performing complex edits that are otherwise difficult.
 
 ![An example of image decomposition. Input image courtesy of David Revoy.](./docs/images/teaser.gif)
