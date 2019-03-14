@@ -15,15 +15,8 @@ RUN apt-get update        && \
       build-essential        \
       cmake                  \
       git                    \
-      qt5-default
-
-RUN git clone https://github.com/eigenteam/eigen-git-mirror.git && \
-    mkdir build-eigen                                           && \
-    cd    build-eigen                                           && \
-    cmake ../eigen-git-mirror                                   && \
-    make -j ${JOBS} install                                     && \
-    cd ..                                                       && \
-    ldconfig || true
+      qt5-default            \
+      libeigen3-dev
 
 ####
 ## application deploy
