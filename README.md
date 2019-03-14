@@ -34,9 +34,30 @@ Unblending Web App: <https://unblending.ongaaccel.jp>
 
 ## Prerequisites
 
-Eigen and Qt5 need to be installed beforehand. macOS users can use `brew` for this purpose: 
+Eigen and Qt5 need to be installed beforehand. 
+
+### macOS
+
+macOS users can simply use `brew` for this purpose: 
 ```
 $ brew install eigen qt5
+```
+
+### Ubuntu
+
+Ubuntu users can use `apt` to get Qt5, but Eigen 3.3 (or later) may need manual installation:
+```
+$ sudo apt install qt5-default
+```
+and
+```
+$ git clone https://github.com/eigenteam/eigen-git-mirror.git
+$ mkdir build-eigen
+$ cd build-eigen
+$ cmake ../eigen-git-mirror
+$ sudo make install
+$ cd ..
+$ rm -rf build-eigen eigen-git-mirror
 ```
 
 ## Build Using CMake
