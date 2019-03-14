@@ -29,35 +29,23 @@ Unblending Web App: <https://unblending.ongaaccel.jp>
 - parallel-util <https://github.com/yuki-koyama/parallel-util> (included as gitsubmodule)
 - timer <https://github.com/yuki-koyama/timer> (included as gitsubmodule)
 - tinycolormap <https://github.com/yuki-koyama/tinycolormap> (included as gitsubmodule)
-- Eigen (3.3 or later) <http://eigen.tuxfamily.org/>
-- Qt5 <https://www.qt.io/>
+- Eigen <http://eigen.tuxfamily.org/>
+- Qt <https://www.qt.io/>
 
 ## Prerequisites
 
-Eigen and Qt5 need to be installed beforehand. 
+Eigen (3.x.x) and Qt (5.x.x) need to be installed beforehand.
 
 ### macOS
 
-macOS users can simply use `brew` for this purpose: 
 ```
 $ brew install eigen qt5
 ```
 
 ### Ubuntu
 
-Ubuntu users can use `apt` to get Qt5, but Eigen 3.3 (or later) may need manual installation:
 ```
-$ sudo apt install qt5-default
-```
-and
-```
-$ git clone https://github.com/eigenteam/eigen-git-mirror.git
-$ mkdir build-eigen
-$ cd build-eigen
-$ cmake ../eigen-git-mirror
-$ sudo make install
-$ cd ..
-$ rm -rf build-eigen eigen-git-mirror
+$ sudo apt install qt5-default libeigen3-dev
 ```
 
 ## Build Using CMake
@@ -90,7 +78,7 @@ $ cd unblending
 $ docker build -t unblending-cli:latest .
 ```
 
-Then, you can use the CLI by `docker run`: 
+Then, you can use the CLI by `docker run`:
 ```
 $ docker run --rm --volume $(pwd):/tmp -it unblending-cli:latest [-o <output-dir-path>] [-w <target-image-width>] <input-image-path> <layer-infos-path>
 ```
