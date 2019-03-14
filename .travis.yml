@@ -16,12 +16,6 @@ addons:
     packages:
     - cmake
     - qt5-default
-before_script:
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then git clone https://github.com/eigenteam/eigen-git-mirror.git; fi
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then mkdir build-eigen; fi
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then cd build-eigen; fi
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then cmake ../eigen-git-mirror; fi
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo make install; fi
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then cd ..; fi
+    - libeigen3-dev
 script:
 - cmake -DUNBLENDING_BUILD_CLI_APP=ON -DUNBLENDING_BUILD_GUI_APP=ON . && make
