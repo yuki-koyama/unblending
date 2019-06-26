@@ -9,13 +9,11 @@ dist: xenial
 addons:
   homebrew:
     packages:
-    - cmake
     - eigen
     - qt
     update: true
   apt:
     packages:
-    - cmake
     - qt5-default
     - libeigen3-dev
 script:
