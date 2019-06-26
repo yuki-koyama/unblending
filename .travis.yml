@@ -12,6 +12,7 @@ addons:
     - cmake
     - eigen
     - qt
+    update: true
   apt:
     packages:
     - cmake
