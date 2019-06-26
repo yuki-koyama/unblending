@@ -95,7 +95,7 @@ See `LayerInfos.md`.
 
 ## Licensing
 
-Unblending is dual-licensed; You may use this software under either *LGPLv3* or *our commercial license*. See the `LICENSE` files for details.
+Unblending is dual-licensed; You may use this software under either *LGPLv3* or *our commercial (proprietary) license*. See the `LICENSE` files for details.
 
 ## Contributing
 
