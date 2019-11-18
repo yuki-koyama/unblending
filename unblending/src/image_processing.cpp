@@ -62,7 +62,8 @@ namespace unblending
 
     AbstractImage::IntColor Image::get_color(int x, int y) const
     {
-        const tinycolormap::Color color = tinycolormap::GetColor(get_pixel(x, y), tinycolormap::ColormapType::Magma);
+        const tinycolormap::ColormapType type = tinycolormap::ColormapType::Magma;
+        const tinycolormap::Color color = tinycolormap::GetColor(get_pixel(x, y), type);
         return IntColor(color[0] * 255, color[1] * 255, color[2] * 255, 255);
     }
 

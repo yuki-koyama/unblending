@@ -24,6 +24,8 @@ option(UNBLENDING_BUILD_GUI_APP "Build GUI app" OFF)
 ######################################################################
 
 set(TINYCOLORMAP_BUILD_TOOLS OFF CACHE INTERNAL "" FORCE)
+set(TINYCOLORMAP_WITH_EIGEN  OFF CACHE INTERNAL "" FORCE)
+set(TINYCOLORMAP_WITH_QT5    OFF CACHE INTERNAL "" FORCE)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/external/tinycolormap)
 
 set(TIMER_BUILD_TEST         OFF CACHE INTERNAL "" FORCE)
