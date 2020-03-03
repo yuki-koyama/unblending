@@ -1,6 +1,7 @@
 # Unblending
 
-[![Build Status](https://travis-ci.com/yuki-koyama/unblending.svg?branch=master)](https://travis-ci.com/yuki-koyama/unblending)
+![Ubuntu](https://github.com/yuki-koyama/unblending/workflows/Ubuntu/badge.svg)
+![macOS](https://github.com/yuki-koyama/unblending/workflows/macOS/badge.svg)
 
 Unblending is a C++ library for decomposing a target image into a set of semi-transparent layers associated with *advanced color-blend modes* (e.g., "multiply" and "color-dodge"). Output layers can be imported to Adobe Photoshop, Adobe After Effects, GIMP, Krita, etc. and are useful for performing complex edits that are otherwise difficult.
 
@@ -38,31 +39,31 @@ Eigen (3.x.x) and Qt (5.x.x) need to be installed beforehand.
 
 ### macOS
 
-```
-$ brew install eigen qt5
+```bash
+brew install eigen qt5
 ```
 
 ### Ubuntu
 
-```
-$ sudo apt install qt5-default libeigen3-dev
+```bash
+sudo apt install qt5-default libeigen3-dev
 ```
 
 ## Build Using CMake
 
 Unblending is organized using `cmake` and is built by the following commands:
-```
-$ git clone https://github.com/yuki-koyama/unblending.git --recursive
-$ mkdir build
-$ cd build
-$ cmake ../unblending
-$ make
+```bash
+git clone https://github.com/yuki-koyama/unblending.git --recursive
+mkdir build
+cd build
+cmake ../unblending
+make
 ```
 This process builds a static library (e.g., `libunblending.a`) and a command line interface (CLI) named `unblending-cli`.
 
 The CLI can be used by the following command:
-```
-$ ./unblending-cli/unblending-cli [-o <output-dir-path>] [-w <target-image-width>] <input-image-path> <layer-infos-path>
+```bash
+./unblending-cli/unblending-cli [-o <output-dir-path>] [-w <target-image-width>] <input-image-path> <layer-infos-path>
 ```
 
 The GUI allows you to interactively specify necessary parameters. Currently the GUI is tested on macOS only (pull requests are highly appreciated).
@@ -72,20 +73,20 @@ The GUI allows you to interactively specify necessary parameters. Currently the 
 ## Build and Run Using Docker
 
 If you use `docker`, you can easily build the CLI by `docker build`:
-```
-$ git clone https://github.com/yuki-koyama/unblending.git --recursive
-$ cd unblending
-$ docker build -t unblending-cli:latest .
+```bash
+git clone https://github.com/yuki-koyama/unblending.git --recursive
+cd unblending
+docker build -t unblending-cli:latest .
 ```
 
 Then, you can use the CLI by `docker run`:
-```
-$ docker run --rm --volume $(pwd):/tmp -it unblending-cli:latest [-o <output-dir-path>] [-w <target-image-width>] <input-image-path> <layer-infos-path>
+```bash
+docker run --rm --volume $(pwd):/tmp -it unblending-cli:latest [-o <output-dir-path>] [-w <target-image-width>] <input-image-path> <layer-infos-path>
 ```
 
 For example, the following command generates results into a sub directory named `output`:
-```
-$ docker run --rm --volume $(pwd):/tmp -it unblending-cli:latest -o /tmp/output -w 120 /tmp/examples/magic.png /tmp/examples/magic.json
+```bash
+docker run --rm --volume $(pwd):/tmp -it unblending-cli:latest -o /tmp/output -w 120 /tmp/examples/magic.png /tmp/examples/magic.json
 ```
 Note: this typically takes around 10--30 seconds with consumer-level laptops.
 
