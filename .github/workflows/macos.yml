@@ -1,0 +1,19 @@
+name: macOS
+
+on: [push]
+
+jobs:
+  build-test:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: install-build-dependencies
+      run: brew install eigen qt
+    - name: submodule
+      run: git submodule update --init --recursive
+    - name: build
+      run: |
+        cmake -DUNBLENDING_BUILD_CLI_APP=ON -DUNBLENDING_BUILD_GUI_APP=ON .
+        make
