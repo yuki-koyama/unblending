@@ -31,7 +31,7 @@ Unblending Web App: <https://unblending.ongaaccel.jp>
 - timer <https://github.com/yuki-koyama/timer> (included as gitsubmodule)
 - tinycolormap <https://github.com/yuki-koyama/tinycolormap> (included as gitsubmodule)
 - Eigen <http://eigen.tuxfamily.org/>
-- Qt <https://www.qt.io/>
+- Qt5 <https://www.qt.io/>
 
 ## Prerequisites
 
@@ -40,7 +40,7 @@ Eigen (3.x.x) and Qt (5.x.x) need to be installed beforehand.
 ### macOS
 
 ```bash
-brew install eigen qt5
+brew install eigen qt@5
 ```
 
 ### Ubuntu

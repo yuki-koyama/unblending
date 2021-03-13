@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: install-build-dependencies
-      run: brew install eigen qt
+      run: brew install eigen qt@5
     - name: submodule
       run: git submodule update --init --recursive
     - name: build
